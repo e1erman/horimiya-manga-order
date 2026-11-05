@@ -18,22 +18,31 @@ episode files; the script cuts them on your computer.
 
 The watch order is by *arashi* (u/iiStormBringer) from the fan document *"Everything Horimiya"*.
 
+## Download
+
+On the [Releases page](https://github.com/e1erman/horimiya-manga-order/releases):
+
+- **`HorimiyaMangaOrder.exe`** – Windows, no Python needed. Just double-click it.
+  Windows may warn that the app is unknown (it isn't signed): click *More info → Run anyway*.
+- **`horimiya-manga-order-vX.Y.Z.zip`** – the Python scripts, for Windows, Linux and macOS.
+
 ## What you need
 
-- [Python 3.10+](https://www.python.org/downloads/)
-- [ffmpeg](https://ffmpeg.org/download.html) on your PATH, built **with chromaprint**
-  (Windows: the "full" build from gyan.dev; Linux/macOS: most distro / Homebrew builds)
+- [ffmpeg](https://ffmpeg.org/download.html), built **with chromaprint**. Either on your PATH
+  (Windows: `winget install Gyan.FFmpeg`; Linux/macOS: most distro / Homebrew builds) or simply put
+  `ffmpeg.exe` and `ffprobe.exe` in the same folder as the exe / scripts.
+- [Python 3.10+](https://www.python.org/downloads/) – only for the zip version
 - all 26 episodes: Horimiya 1–13 and The Missing Pieces 1–13
 
 ## Quick start
 
-1. Download the latest release and unpack it.
+1. Download the exe (or the zip and unpack it).
 2. Put all episodes in one folder. Each file name must contain `SxxEyy`:
    - Horimiya → `S01E01` … `S01E13`
    - The Missing Pieces → `S02E01` … `S02E13`
 
    e.g. `Horimiya - S01E01.mkv`, `Horimiya - S02E07 [1080p].mkv`. Anything else in the name is ignored.
-3. Start the window: double-click **`horimiya_gui.pyw`** (Windows), or run
+3. Start the window: double-click **`HorimiyaMangaOrder.exe`** or **`horimiya_gui.pyw`**, or run
 
    ```bash
    python horimiya_order.py
@@ -125,6 +134,15 @@ You can change any assignment there (`"volume"` per step or per segment).
 
 - Where one part ends at X and the next starts at X+1 s, both are set to X+0.5 s.
 - Two gaps exist in the guide itself and are kept: S2E04 20:18–20:28 and S2E12 16:45–17:57.
+
+## Building the exe
+
+```bash
+pip install pyinstaller
+python tools/build_exe.py
+```
+
+`dist/` then contains the exe and the release zip.
 
 ## Testing
 

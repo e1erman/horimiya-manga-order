@@ -19,12 +19,15 @@ from tkinter import filedialog, messagebox, ttk
 
 HERE = Path(__file__).resolve().parent
 SCRIPT = HERE / "horimiya_order.py"
+FROZEN = getattr(sys, "frozen", False)          # running as .exe
+APP_DIR = Path(sys.executable).resolve().parent if FROZEN else HERE
 SETTINGS = Path.home() / ".horimiya_manga_order.json"
 
 
 def load_volumes() -> dict[str, str]:
     try:
-        with open(HERE / "order.json", encoding="utf-8") as f:
+        own = APP_DIR / "order.json"
+        with open(own if own.exists() else HERE / "order.json", encoding="utf-8") as f:
             return json.load(f).get("volumes", {})
     except OSError:
         return {str(i): "" for i in range(1, 17)}
@@ -274,9 +277,10 @@ class App:
         flags = subprocess.CREATE_NO_WINDOW if sys.platform == "win32" else 0
         env = dict(os.environ, PYTHONUNBUFFERED="1", PYTHONIOENCODING="utf-8")
         try:
-            self.proc = subprocess.Popen([python, str(SCRIPT), *args], stdout=subprocess.PIPE,
+            cmd = [sys.executable, *args] if FROZEN else [python, str(SCRIPT), *args]
+            self.proc = subprocess.Popen(cmd, stdout=subprocess.PIPE,
                                          stderr=subprocess.STDOUT, text=True, encoding="utf-8",
-                                         errors="replace", cwd=HERE, env=env, creationflags=flags)
+                                         errors="replace", cwd=APP_DIR, env=env, creationflags=flags)
         except OSError as e:
             self.write(f"Could not start: {e}\n")
             self.finish(1)

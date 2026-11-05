@@ -13,3 +13,5 @@ manga-order/
 __pycache__/
 *.pyc
 episodes/
+build/
+dist/

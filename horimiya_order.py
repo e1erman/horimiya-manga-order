@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -24,7 +25,12 @@ from statistics import median
 
 __version__ = "0.1.0"
 
-HERE = Path(__file__).resolve().parent
+# As .exe (PyInstaller) the bundled files live in a temp folder; the exe's own
+# folder is where users can drop ffmpeg.exe or their own order.json.
+FROZEN = getattr(sys, "frozen", False)
+HERE = Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parent))
+APP_DIR = Path(sys.executable).resolve().parent if FROZEN else HERE
+DEFAULT_ORDER = APP_DIR / "order.json" if (APP_DIR / "order.json").exists() else HERE / "order.json"
 VIDEO_EXTS = {".mkv", ".mp4", ".m4v", ".avi", ".webm", ".ts", ".m2ts", ".mov"}
 EPISODE_RE = re.compile(r"S0?([12])\s*E(\d{1,2})(?!\d)", re.IGNORECASE)
 TEXT_SUBS = {"ass", "ssa", "subrip", "srt", "mov_text", "webvtt", "text"}
@@ -48,6 +54,9 @@ class UserError(Exception):
 # ---------------------------------------------------------------- helpers
 
 def tool(name: str) -> str:
+    for candidate in (APP_DIR / f"{name}.exe", APP_DIR / name):   # next to the script/exe
+        if candidate.is_file():
+            return str(candidate)
     path = shutil.which(name)
     if not path:
         raise UserError(f"'{name}' was not found. Install ffmpeg and make sure it is on PATH.")
@@ -796,7 +805,7 @@ def main(argv: list[str] | None = None) -> int:
 
     def common(sp):
         sp.add_argument("folder", help="folder with your episode files (names must contain S01E01 ... S02E13)")
-        sp.add_argument("--order", default=str(HERE / "order.json"), help="order file (default: order.json)")
+        sp.add_argument("--order", default=str(DEFAULT_ORDER), help="order file (default: order.json)")
         sp.add_argument("--offset", action="append", metavar="EP=SEC",
                         help="shift timestamps, e.g. S1E02=+1.5, S2=-0.5 or all=+5 (repeatable)")
         sp.add_argument("--op", action="append", metavar="EP=FROM-TO",
@@ -828,6 +837,8 @@ def main(argv: list[str] | None = None) -> int:
     k.add_argument("--pix-fmt", default="yuv420p", help="output pixel format (default yuv420p)")
     k.set_defaults(func=cmd_cut)
 
+    if sys.stdout is None:   # windowed .exe started from a console
+        sys.stdout = sys.stderr = open(os.devnull, "w")
     if argv is None and len(sys.argv) == 1:   # no arguments: open the window
         import runpy
         runpy.run_path(str(HERE / "horimiya_gui.pyw"), run_name="__main__")
