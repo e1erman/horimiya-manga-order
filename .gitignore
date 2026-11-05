@@ -1,0 +1,15 @@
+# never commit video
+*.mkv
+*.mp4
+*.m4v
+*.avi
+*.webm
+*.ts
+*.m2ts
+*.mov
+*.ass
+*.srt
+manga-order/
+__pycache__/
+*.pyc
+episodes/

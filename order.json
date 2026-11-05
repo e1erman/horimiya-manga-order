@@ -1,0 +1,206 @@
+{
+  "name": "Horimiya manga order",
+  "credit": "Watch order by arashi (u/iiStormBringer), from the fan document \"Everything Horimiya\".",
+  "seasons": {
+    "S1": "Horimiya (2021)",
+    "S2": "Horimiya: The Missing Pieces / Horimiya: Piece (2023)"
+  },
+  "time_tokens": {
+    "start": "beginning of the episode file",
+    "end": "end of the episode file",
+    "op_start": "first frame of the opening (detected automatically)",
+    "op_end": "first frame after the opening (detected automatically)"
+  },
+  "notes": [
+    "Where the original guide ends one part at X and starts the next at X+1s (display rounding), both are set to X+0.5s so nothing is lost or doubled.",
+    "Step 23 originally starts at 10:15 while step 30 ends at 10:13; both use 10:14.",
+    "Gaps that exist in the original guide are kept: S2E04 20:18-20:28 and S2E12 16:45-17:57.",
+    "Volumes follow the chapter list on Wikipedia (16 volumes, plus bonus volume 17).",
+    "Each step goes to the volume of most of its chapters. Step 5 (S1E03-06) is split per episode as an estimate: E03->2, E04->3, E05->4, E06->5. Step 41 is split per part: ch. 86 -> 12, ch. 91 -> 13. Step 56 (ch. 122.6, 122.7, 131) stays in volume 16."
+  ],
+  "reference": {
+    "description": "Opening start and file length (seconds) in the release the guide's timestamps fit: Crunchyroll (no logo in front). Measured on Crunchyroll S2 and on Wakanim S1 minus its 7.7-9.6 s logo. The script shifts numeric timestamps by (your opening start - this opening start).",
+    "episodes": {
+      "S1E01": {
+        "op_start": 206.84,
+        "duration": 1419.92
+      },
+      "S1E02": {
+        "op_start": 79.72,
+        "duration": 1420.08
+      },
+      "S1E03": {
+        "op_start": 138.79,
+        "duration": 1419.37
+      },
+      "S1E04": {
+        "op_start": 17.69,
+        "duration": 1419.12
+      },
+      "S1E05": {
+        "op_start": 52.74,
+        "duration": 1419.62
+      },
+      "S1E06": {
+        "op_start": 175.77,
+        "duration": 1420.04
+      },
+      "S1E07": {
+        "op_start": 62.15,
+        "duration": 1419.25
+      },
+      "S1E08": {
+        "op_start": 132.31,
+        "duration": 1419.42
+      },
+      "S1E09": {
+        "op_start": 49.32,
+        "duration": 1418.96
+      },
+      "S1E10": {
+        "op_start": 156.33,
+        "duration": 1418.08
+      },
+      "S1E11": {
+        "op_start": 96.0,
+        "duration": 1420.62
+      },
+      "S1E12": {
+        "op_start": 105.28,
+        "duration": 1419.62
+      },
+      "S1E13": {
+        "op_start": 122.28,
+        "duration": 1407.13
+      },
+      "S2E01": {
+        "op_start": 43.9,
+        "duration": 1420.08
+      },
+      "S2E02": {
+        "op_start": 72.13,
+        "duration": 1420.08
+      },
+      "S2E03": {
+        "op_start": 82.04,
+        "duration": 1420.13
+      },
+      "S2E04": {
+        "op_start": 32.76,
+        "duration": 1420.08
+      },
+      "S2E05": {
+        "op_start": 112.74,
+        "duration": 1420.0
+      },
+      "S2E06": {
+        "op_start": 95.04,
+        "duration": 1420.04
+      },
+      "S2E07": {
+        "op_start": 51.83,
+        "duration": 1420.13
+      },
+      "S2E08": {
+        "op_start": 86.87,
+        "duration": 1420.13
+      },
+      "S2E09": {
+        "op_start": 69.78,
+        "duration": 1420.08
+      },
+      "S2E10": {
+        "op_start": 55.05,
+        "duration": 1420.08
+      },
+      "S2E11": {
+        "op_start": 73.87,
+        "duration": 1420.08
+      },
+      "S2E12": {
+        "op_start": 368.78,
+        "duration": 1420.08
+      },
+      "S2E13": {
+        "op_start": 177.0,
+        "duration": 1582.04
+      }
+    }
+  },
+  "volumes": {
+    "1": "1-6.5",
+    "2": "7-13",
+    "3": "14-20",
+    "4": "21-27",
+    "5": "28-34",
+    "6": "35-42",
+    "7": "43-50",
+    "8": "51-56",
+    "9": "57-63.5",
+    "10": "64-71",
+    "11": "72-81",
+    "12": "82-90",
+    "13": "91-100",
+    "14": "101-109",
+    "15": "110-118.5",
+    "16": "119-122.7 (+131)"
+  },
+  "steps": [
+    {"n": 1, "chapters": "1-3", "guide": "Horimiya, Episode 1", "segments": [{"src": "S1E01", "from": "start", "to": "end"}], "volume": 1},
+    {"n": 2, "chapters": "4", "guide": "Start Horimiya, Episode 2: From beginning to 9:30", "segments": [{"src": "S1E02", "from": "start", "to": "9:30"}], "volume": 1},
+    {"n": 3, "chapters": "6", "guide": "Start Horimiya: Piece, Episode 1: After opening to 11:00", "segments": [{"src": "S2E01", "from": "op_end", "to": "11:00"}], "volume": 1},
+    {"n": 4, "chapters": "7, 9", "guide": "Finish Horimiya, Episode 2: From 9:30 till end", "segments": [{"src": "S1E02", "from": "9:30", "to": "end"}], "volume": 2},
+    {"n": 5, "chapters": "10-13, 16-27, 29-31", "guide": "Horimiya, Episode 3-6", "segments": [{"src": "S1E03", "from": "start", "to": "end", "volume": 2}, {"src": "S1E04", "from": "start", "to": "end", "volume": 3}, {"src": "S1E05", "from": "start", "to": "end", "volume": 4}, {"src": "S1E06", "from": "start", "to": "end", "volume": 5}]},
+    {"n": 6, "chapters": "32, 33", "guide": "Continue Horimiya: Piece, Episode 1: From 11:00 to 15:00", "segments": [{"src": "S2E01", "from": "11:00", "to": "15:00"}], "volume": 5},
+    {"n": 7, "chapters": "34-37", "guide": "Horimiya, Episode 7", "segments": [{"src": "S1E07", "from": "start", "to": "end"}], "volume": 6},
+    {"n": 8, "chapters": "38", "guide": "Start Horimiya, Episode 8: From beginning to opening credits", "segments": [{"src": "S1E08", "from": "start", "to": "op_start"}], "volume": 6},
+    {"n": 9, "chapters": "38", "guide": "Start Horimiya, Episode 9: From beginning to 6:15", "segments": [{"src": "S1E09", "from": "start", "to": "6:15"}], "volume": 6},
+    {"n": 10, "chapters": "39", "guide": "Continue Horimiya, Episode 8: From opening to 5 minutes and 12 seconds", "segments": [{"src": "S1E08", "from": "op_start", "to": "5:12.5"}], "volume": 6},
+    {"n": 11, "chapters": "40", "guide": "Finish Horimiya: Piece, Episode 1: From 15:00 till end", "segments": [{"src": "S2E01", "from": "15:00", "to": "end"}], "volume": 6},
+    {"n": 12, "chapters": "43, 44", "guide": "Skip to Horimiya, Episode 8: From 12:13 second till the end", "segments": [{"src": "S1E08", "from": "12:13", "to": "end"}], "volume": 7},
+    {"n": 13, "chapters": "46, 47", "guide": "Continue Horimiya, Episode 9: From 6:15 to 11:42", "segments": [{"src": "S1E09", "from": "6:15", "to": "11:42"}], "volume": 7},
+    {"n": 14, "chapters": "47-50", "guide": "Horimiya: Piece, Episode 2", "segments": [{"src": "S2E02", "from": "start", "to": "end"}], "volume": 7},
+    {"n": 15, "chapters": "51-53", "guide": "Horimiya: Piece, Episode 3", "segments": [{"src": "S2E03", "from": "start", "to": "end"}], "volume": 8},
+    {"n": 16, "chapters": "54, 55", "guide": "Finish Horimiya, Episode 9: From 11:42 to End", "segments": [{"src": "S1E09", "from": "11:42", "to": "end"}], "volume": 8},
+    {"n": 17, "chapters": "57", "guide": "Horimiya: Piece, Episode 4: From beginning to 8:39, then skip to 20:28 to end", "segments": [{"src": "S2E04", "from": "start", "to": "8:39"}, {"src": "S2E04", "from": "20:28", "to": "end"}], "volume": 9},
+    {"n": 18, "chapters": "58-60", "guide": "Horimiya, Episode 10: After opening to 18:56, then from beginning to opening", "segments": [{"src": "S1E10", "from": "op_end", "to": "18:56.5"}, {"src": "S1E10", "from": "start", "to": "op_start"}], "volume": 9},
+    {"n": 19, "chapters": "60", "guide": "Continue Horimiya: Piece, Episode 4: From 8:39 to 11:51", "segments": [{"src": "S2E04", "from": "8:39", "to": "11:51"}], "volume": 9},
+    {"n": 20, "chapters": "61", "guide": "Finish Horimiya, Episode 10: From 18:57 to end", "segments": [{"src": "S1E10", "from": "18:56.5", "to": "end"}], "volume": 9},
+    {"n": 21, "chapters": "62", "guide": "Continue Horimiya: Piece, Episode 4: From 11:51 to 14:17", "segments": [{"src": "S2E04", "from": "11:51", "to": "14:17"}], "volume": 9},
+    {"n": 22, "chapters": "63", "guide": "Start Horimiya, Episode 12: From beginning to opening", "segments": [{"src": "S1E12", "from": "start", "to": "op_start"}], "volume": 9},
+    {"n": 23, "chapters": "63, 63.5, 64", "guide": "Skip to Horimiya, Episode 12: From 10:15 seconds till the end", "segments": [{"src": "S1E12", "from": "10:14", "to": "end"}], "volume": 9},
+    {"n": 24, "chapters": "66", "guide": "Start Horimiya: Piece, Episode 8: From beginning to opening", "segments": [{"src": "S2E08", "from": "start", "to": "op_start"}], "volume": 10},
+    {"n": 25, "chapters": "67", "guide": "Skip to Horimiya: Piece, Episode 7: From 12:21 to 15:09", "segments": [{"src": "S2E07", "from": "12:20.5", "to": "15:09.5"}], "volume": 10},
+    {"n": 26, "chapters": "68", "guide": "Finish Horimiya: Piece, Episode 4: From 14:17 to 20:18", "segments": [{"src": "S2E04", "from": "14:17", "to": "20:18"}], "volume": 10},
+    {"n": 27, "chapters": "69", "guide": "Skip to Horimiya: Piece, Episode 9: From 16:41 to end", "segments": [{"src": "S2E09", "from": "16:41", "to": "end"}], "volume": 10},
+    {"n": 28, "chapters": "70", "guide": "Finish Horimiya, Episode 8: From 5:13 seconds to 12:13 seconds", "segments": [{"src": "S1E08", "from": "5:12.5", "to": "12:13"}], "volume": 10},
+    {"n": 29, "chapters": "72", "guide": "Start Horimiya: Piece, Episode 6: From beginning to 10:27", "segments": [{"src": "S2E06", "from": "start", "to": "10:27"}], "volume": 11},
+    {"n": 30, "chapters": "73", "guide": "Finish Horimiya, Episode 12: From opening credits to 10:13", "segments": [{"src": "S1E12", "from": "op_start", "to": "10:14"}], "volume": 11},
+    {"n": 31, "chapters": "74", "guide": "Start Horimiya: Piece, Episode 10: From beginning to 7:01", "segments": [{"src": "S2E10", "from": "start", "to": "7:01.5"}], "volume": 11},
+    {"n": 32, "chapters": "75, 76", "guide": "Horimiya, Episode 11: After opening to 7:58, then from beginning to opening", "segments": [{"src": "S1E11", "from": "op_end", "to": "7:58"}, {"src": "S1E11", "from": "start", "to": "op_start"}], "volume": 11},
+    {"n": 33, "chapters": "76", "guide": "Start Horimiya: Piece, Episode 5: From beginning to 6:59", "segments": [{"src": "S2E05", "from": "start", "to": "6:59"}], "volume": 11},
+    {"n": 34, "chapters": "77", "guide": "Continue Horimiya: Piece, Episode 10: From 7:02 to 10:30", "segments": [{"src": "S2E10", "from": "7:01.5", "to": "10:30.5"}], "volume": 11},
+    {"n": 35, "chapters": "78", "guide": "Continue Horimiya: Piece, Episode 6: From 10:27 to 13:14", "segments": [{"src": "S2E06", "from": "10:27", "to": "13:14"}], "volume": 11},
+    {"n": 36, "chapters": "79", "guide": "Start Horimiya: Piece, Episode 13: From beginning to 6:32", "segments": [{"src": "S2E13", "from": "start", "to": "6:32.5"}], "volume": 11},
+    {"n": 37, "chapters": "80", "guide": "Continue Horimiya: Piece, Episode 10 from 10:31 to 17:08", "segments": [{"src": "S2E10", "from": "10:30.5", "to": "17:09"}], "volume": 11},
+    {"n": 38, "chapters": "82, 83", "guide": "Continue Horimiya: Piece, Episode 8: From 2:57 to 13:24", "segments": [{"src": "S2E08", "from": "2:57", "to": "13:24.5"}], "volume": 12},
+    {"n": 39, "chapters": "84", "guide": "Continue Horimiya: Piece, Episode 7: From beginning to 8:02", "segments": [{"src": "S2E07", "from": "start", "to": "8:02"}], "volume": 12},
+    {"n": 40, "chapters": "87", "guide": "Continue Horimiya: Piece, Episode 8: From 13:25 to 17:52", "segments": [{"src": "S2E08", "from": "13:24.5", "to": "17:52"}], "volume": 12},
+    {"n": 41, "chapters": "86, 91", "guide": "Continue Horimiya, Episode 11: From 7:58 to 9:00, then from 14:05 to end", "segments": [{"src": "S1E11", "from": "7:58", "to": "9:00", "volume": 12}, {"src": "S1E11", "from": "14:05", "to": "end", "volume": 13}]},
+    {"n": 42, "chapters": "93, 94", "guide": "Finish Horimiya: Piece, Episode 5: From 6:59 to end", "segments": [{"src": "S2E05", "from": "6:59", "to": "end"}], "volume": 13},
+    {"n": 43, "chapters": "95, 96", "guide": "Finish Horimiya: Piece, Episode 6: From 16:37 to end, then from 13:14 to 16:37", "segments": [{"src": "S2E06", "from": "16:37", "to": "end"}, {"src": "S2E06", "from": "13:14", "to": "16:37"}], "volume": 13},
+    {"n": 44, "chapters": "98", "guide": "Horimiya: Piece, Episode 12: After opening to 11:25, then from 13:58 to 16:45", "segments": [{"src": "S2E12", "from": "op_end", "to": "11:25.5"}, {"src": "S2E12", "from": "13:57.5", "to": "16:45"}], "volume": 13},
+    {"n": 45, "chapters": "100", "guide": "Finish Horimiya: Piece, Episode 10: From 17:10 to end", "segments": [{"src": "S2E10", "from": "17:09", "to": "end"}], "volume": 13},
+    {"n": 46, "chapters": "103", "guide": "Finish Horimiya, Episode 11: From 9:00 to 14:05", "segments": [{"src": "S1E11", "from": "9:00", "to": "14:05"}], "volume": 14},
+    {"n": 47, "chapters": "104, 105", "guide": "Continue Horimiya: Piece, Episode 7: 15:10 to end", "segments": [{"src": "S2E07", "from": "15:09.5", "to": "end"}], "volume": 14},
+    {"n": 48, "chapters": "107", "guide": "Continue Horimiya: Piece, Episode 12: 11:26 to 13:57, then from 17:57 to end", "segments": [{"src": "S2E12", "from": "11:25.5", "to": "13:57.5"}, {"src": "S2E12", "from": "17:57", "to": "end"}], "volume": 14},
+    {"n": 49, "chapters": "110", "guide": "Continue Horimiya: Piece, Episode 9: 5:33 to 12:35", "segments": [{"src": "S2E09", "from": "5:32.5", "to": "12:35.5"}], "volume": 15},
+    {"n": 50, "chapters": "112", "guide": "Finish Horimiya: Piece, Episode 9: From 12:36 to 16:41 then beginning to 5:32", "segments": [{"src": "S2E09", "from": "12:35.5", "to": "16:41"}, {"src": "S2E09", "from": "start", "to": "5:32.5"}], "volume": 15},
+    {"n": 51, "chapters": "115", "guide": "Finish Horimiya: Piece, Episode 8: From 17:52 to end", "segments": [{"src": "S2E08", "from": "17:52", "to": "end"}], "volume": 15},
+    {"n": 52, "chapters": "116", "guide": "Finish Horimiya: Piece, Episode 7: From 8:02 to 12:20", "segments": [{"src": "S2E07", "from": "8:02", "to": "12:20.5"}], "volume": 15},
+    {"n": 53, "chapters": "117, 118, 118.5", "guide": "Horimiya: Piece, Episode 11", "segments": [{"src": "S2E11", "from": "start", "to": "end"}], "volume": 15},
+    {"n": 54, "chapters": "119.7", "guide": "Finish Horimiya: Piece, Episode 12: From beginning to 6:08", "segments": [{"src": "S2E12", "from": "start", "to": "6:08"}], "volume": 16},
+    {"n": 55, "chapters": "120-122", "guide": "Horimiya, Episode 13", "segments": [{"src": "S1E13", "from": "start", "to": "end"}], "volume": 16},
+    {"n": 56, "chapters": "122.6, 122.7, 131", "guide": "Finish Horimiya: Piece, Episode 13: 6:33 to end", "segments": [{"src": "S2E13", "from": "6:32.5", "to": "end"}], "volume": 16}
+  ]
+}
