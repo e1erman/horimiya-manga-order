@@ -4,6 +4,7 @@
 You bring your own episode files; this script only stores timestamps.
 Needs Python 3.10+ and ffmpeg/ffprobe (with chromaprint) on PATH.
 
+    python horimiya_order.py                  (opens a window)
     python horimiya_order.py check <folder>
     python horimiya_order.py cut   <folder> [-o <output folder>]
 """
@@ -778,6 +779,8 @@ def cmd_cut(opts, order: dict) -> int:
         return 0
 
     out_dir.mkdir(parents=True, exist_ok=True)
+    for old in out_dir.glob(".tmp-*"):   # left over from a stopped run
+        shutil.rmtree(old, ignore_errors=True)
     with tempfile.TemporaryDirectory(dir=out_dir, prefix=".tmp-") as tmp:
         for i, job in enumerate(jobs, 1):
             print(f"\n[{i}/{len(jobs)}] {job.name}", flush=True)
@@ -825,6 +828,10 @@ def main(argv: list[str] | None = None) -> int:
     k.add_argument("--pix-fmt", default="yuv420p", help="output pixel format (default yuv420p)")
     k.set_defaults(func=cmd_cut)
 
+    if argv is None and len(sys.argv) == 1:   # no arguments: open the window
+        import runpy
+        runpy.run_path(str(HERE / "horimiya_gui.pyw"), run_name="__main__")
+        return 0
     opts = p.parse_args(argv)
     try:
         with open(opts.order, encoding="utf-8") as f:
